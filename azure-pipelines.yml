@@ -11,8 +11,14 @@ steps:
   - script: npm i
     displayName: 'Install npm dependencies'
 
+  - script: npm run static
+    displayName: 'Static analysis'
+
+  - script: npm run build
+    displayName: 'Compile'
+
   - script: npx semantic-release
     displayName: 'Release'
     env:
       GH_TOKEN: $(GH_TOKEN)
-NPM_TOKEN: $(NPM_TOKEN)
+      NPM_TOKEN: $(NPM_TOKEN)
