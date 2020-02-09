@@ -1,4 +1,4 @@
-# spawn-media-player [![Build Status](https://dev.azure.com/gamesdonequick/spawn-media-player/_apis/build/status/GamesDoneQuick.spawn-media-player?branchName=master)](https://dev.azure.com/gamesdonequick/spawn-media-player/_build/latest?definitionId=12&branchName=master)
+# spawn-media-player [![Build Status](https://dev.azure.com/gamesdonequick/spawn-media-player/_apis/build/status/GamesDoneQuick.spawn-media-player?branchName=master)](https://dev.azure.com/gamesdonequick/spawn-media-player/_build/latest?definitionId=12&branchName=master) ![npm](https://img.shields.io/npm/v/@gamesdonequick/spawn-media-player)
 
 > A tiny CLI tool that spawns a media player, letting the user pick a few options in the process.
 
