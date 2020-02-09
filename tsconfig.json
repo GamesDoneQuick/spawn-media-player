@@ -1,0 +1,9 @@
+{
+	"extends": "@supportclass/tsconfig-base",
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "dist",
+		"module": "commonjs"
+	},
+	"include": ["src/**/*.ts", "types/stubs.d.ts", "types/windows-audio-devices.d.ts"]
+}
