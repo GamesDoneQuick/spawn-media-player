@@ -36,6 +36,8 @@ jobs:
 
   - job: Release
     dependsOn: build
+    pool:
+      vmImage: 'windows-2019'
     steps:
       - script: npm i
         displayName: 'Install npm dependencies'
