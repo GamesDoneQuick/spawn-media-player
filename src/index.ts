@@ -8,7 +8,9 @@ import { getAudioDevices } from 'windows-audio-devices';
 import { Registry } from 'rage-edit';
 import * as prompts from 'prompts';
 
-main();
+main().catch(error => {
+	console.error(error);
+});
 
 async function main(): Promise<void> {
 	const audioDevicesArray = getAudioDevices();
@@ -61,6 +63,10 @@ async function main(): Promise<void> {
 			message: '(Optional) Enter a media path or URL to autoplay',
 		},
 	]);
+
+	if (!response.audio_device) {
+		return;
+	}
 
 	const vlcArgs = [
 		'--ignore-config',
