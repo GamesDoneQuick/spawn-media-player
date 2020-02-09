@@ -1,24 +1,52 @@
 variables:
   - group: Publishing Secrets
 
+  - name: PIPELINE_ARTIFACT_NAME
+    value: 'spawnmp-build'
+
 trigger:
   - master
 
-pool:
-  vmImage: 'windows-2019'
+jobs:
+  - job: Build
+    pool:
+      vmImage: 'windows-2019'
+    strategy:
+      matrix:
+        node_10_x:
+          node_version: 10.x
+        node_12_x:
+          node_version: 12.x
 
-steps:
-  - script: npm i
-    displayName: 'Install npm dependencies'
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: $(node_version)
 
-  - script: npm run static
-    displayName: 'Static analysis'
+      - script: npm i
+        displayName: 'Install npm dependencies'
 
-  - script: npm run build
-    displayName: 'Compile'
+      - script: npm run static
+        displayName: 'Static analysis'
 
-  - script: npx semantic-release
-    displayName: 'Release'
-    env:
-      GH_TOKEN: $(GH_TOKEN)
-      NPM_TOKEN: $(NPM_TOKEN)
+      - script: npm run build
+        displayName: 'Compile'
+
+  # ------ #
+
+  - job: Release
+    dependsOn: build
+    pool:
+      vmImage: 'windows-2019'
+    steps:
+      - script: npm i
+        displayName: 'Install npm dependencies'
+
+      - script: npm run build
+        displayName: 'Compile'
+
+      - script: npx semantic-release
+        displayName: 'Release'
+        env:
+          GH_TOKEN: $(GH_TOKEN)
+          NPM_TOKEN: $(NPM_TOKEN)
