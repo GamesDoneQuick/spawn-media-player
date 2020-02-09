@@ -32,20 +32,13 @@ jobs:
       - script: npm run build
         displayName: 'Compile'
 
-      - publish: $(Agent.BuildDirectory)
-        # We only need one build in the matrix to do this.
-        condition: eq(variables['node_version'], '12.x'))
-        artifact: $(PIPELINE_ARTIFACT_NAME)
-
   # ------ #
 
   - job: Release
     dependsOn: build
     steps:
-      - checkout: none
-
-      - download: current
-        artifact: $(PIPELINE_ARTIFACT_NAME)
+      - script: npm i
+        displayName: 'Install npm dependencies'
 
       - script: npx semantic-release
         displayName: 'Release'
