@@ -5,6 +5,9 @@
 ## Installation
 
 1. [Install the LTS release of Node.js](https://nodejs.org/en/)
+
+-   WARNING: At this time, it seems that one of our dependencies only compiles on Node.js 10. You may receive errors on the next step if using any other version of Node.js
+
 2. Run this command in a terminal/command prompt:
 
     ```

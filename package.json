@@ -28,7 +28,7 @@
   "dependencies": {
     "prompts": "^2.3.0",
     "rage-edit": "^1.2.0",
-    "windows-audio-devices": "github:GamesDoneQuick/windows-audio-devices#eb7b749b150d269d3718cc8fd93ca06e13568ad4"
+    "windows-audio-devices": "github:GamesDoneQuick/windows-audio-devices#9bef3b06d35d432c3e3ba3731e7401c59e8e8bc1"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
