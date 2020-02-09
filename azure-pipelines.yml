@@ -6,12 +6,12 @@ trigger:
 
 pool:
   vmImage: 'windows-2019'
-  strategy:
-matrix:
-  node_10_x:
-    node_version: 10.x
-  node_12_x:
-    node_version: 12.x
+strategy:
+  matrix:
+    node_10_x:
+      node_version: 10.x
+    node_12_x:
+      node_version: 12.x
 
 steps:
   - task: NodeTool@0
