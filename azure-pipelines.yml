@@ -40,6 +40,9 @@ jobs:
       - script: npm i
         displayName: 'Install npm dependencies'
 
+      - script: npm run build
+        displayName: 'Compile'
+
       - script: npx semantic-release
         displayName: 'Release'
         env:
