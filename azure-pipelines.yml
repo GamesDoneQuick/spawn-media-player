@@ -8,6 +8,10 @@ pool:
   vmImage: 'windows-2019'
 
 steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+
   - script: npm i
     displayName: 'Install npm dependencies'
 
