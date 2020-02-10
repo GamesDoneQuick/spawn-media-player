@@ -19,6 +19,10 @@ Run `spawnmp` in a terminal/command prompt and follow the on-screen instructions
 
 ![Demo Image](media/demo.gif)
 
+## Additional options
+
+-   `--repeat` repeats the provided autoplay item indefinitely
+
 ## License
 
 [MIT](LICENSE)

@@ -7,6 +7,7 @@ import { spawn } from 'child_process';
 import { getAudioDevices } from 'windows-audio-devices';
 import { Registry } from 'rage-edit';
 import * as prompts from 'prompts';
+import { argv } from 'yargs';
 
 main().catch(error => {
 	console.error(error);
@@ -78,6 +79,10 @@ async function main(): Promise<void> {
 
 	if (response.media_path.trim().length > 0) {
 		vlcArgs.push(response.media_path);
+	}
+
+	if (argv.repeat) {
+		vlcArgs.push('--repeat');
 	}
 
 	const subprocess = spawn(vlcBinaryPath, vlcArgs, {
