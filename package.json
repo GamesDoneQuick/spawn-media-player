@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/GamesDoneQuick/spawn-media-player#readme",
   "dependencies": {
+    "app-root-path": "^3.0.0",
     "prompts": "^2.3.0",
     "rage-edit": "^1.2.0",
     "windows-audio-devices": "github:GamesDoneQuick/windows-audio-devices#4f95533bc610f0daeba663d1076fe8a16a4f38c6",
@@ -37,6 +38,7 @@
     "@gamesdonequick/eslint-config": "^2.1.0",
     "@gamesdonequick/prettier-config": "^2.2.0",
     "@supportclass/tsconfig-base": "^1.0.2",
+    "@types/app-root-path": "^1.2.4",
     "@types/node": "^13.7.0",
     "@types/prompts": "^2.0.3",
     "@types/yargs": "^15.0.3",

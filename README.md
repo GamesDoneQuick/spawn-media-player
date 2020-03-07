@@ -22,6 +22,7 @@ Run `spawnmp` in a terminal/command prompt and follow the on-screen instructions
 ## Additional options
 
 -   `--repeat` repeats the provided autoplay item indefinitely
+-   `--version` prints the version number and exits, ignores all other options
 
 ## License
 

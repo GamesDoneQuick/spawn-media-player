@@ -2,12 +2,21 @@
 
 // Native
 import { spawn } from 'child_process';
+import * as path from 'path';
 
 // Packages
 import { getAudioDevices } from 'windows-audio-devices';
 import { Registry } from 'rage-edit';
 import * as prompts from 'prompts';
 import { argv } from 'yargs';
+import * as appRootPath from 'app-root-path';
+
+if (argv.version) {
+	const psjonPath = path.join(appRootPath.toString(), 'package.json');
+	const psjon = require(psjonPath); // eslint-disable-line @typescript-eslint/no-var-requires
+	console.log(psjon.version);
+	process.exit(0);
+}
 
 main().catch(error => {
 	console.error(error);
