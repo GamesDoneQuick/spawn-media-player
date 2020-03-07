@@ -72,6 +72,7 @@ async function main(): Promise<void> {
 	const vlcArgs = [
 		'--ignore-config',
 		'--no-qt-privacy-ask',
+		'--no-osd',
 		'--aout=directsound',
 		`--directx-audio-device=${String(response.audio_device.guid)}`,
 		`--meta-title=${String(response.audio_device.name)}`,
