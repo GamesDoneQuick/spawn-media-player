@@ -31,7 +31,7 @@ async function main(): Promise<void> {
 
 	let vlcBinaryPath = await Registry.get('HKLM\\Software\\WOW6432Node\\VideoLAN\\VLC', '');
 	if (!vlcBinaryPath) {
-		let vlcBinaryPath = await Registry.get('HKLM\\Software\\VideoLAN\\VLC', '');
+		vlcBinaryPath = await Registry.get('HKLM\\Software\\VideoLAN\\VLC', '');
 		if (!vlcBinaryPath) {
 			console.error('VLC does not appear to be installed on this system, exiting.');
 			return process.exit(1);
